@@ -5,9 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
+const BASE_PATH = process.env.REACT_APP_BASE_PATH || '/';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename="/netflix-project">
+  <BrowserRouter basename={BASE_PATH}>
     <App />
   </BrowserRouter>
 );
