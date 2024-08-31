@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 
 const AppLayout = () => {
   const BASE_PATH = process.env.REACT_APP_BASE_PATH || '/';
@@ -24,8 +24,10 @@ const AppLayout = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href={`${BASE_PATH}`} className="menu-text">HOME</Nav.Link>
-            <Nav.Link href={`${BASE_PATH}/movies`} className="menu-text">MOVIES</Nav.Link>
+            {/* <Nav.Link href={`${BASE_PATH}`} className="menu-text">HOME</Nav.Link>
+            <Nav.Link href={`${BASE_PATH}/movies`} className="menu-text">MOVIES</Nav.Link> */}
+            <NavLink to="/" className="menu-text custom-nav-link">HOME</NavLink>
+            <NavLink to="/movies" className="menu-text custom-nav-link">MOVIES</NavLink>
           </Nav>
           <Form className="d-flex">
             <Form.Control

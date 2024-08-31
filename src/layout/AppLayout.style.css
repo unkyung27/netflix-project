@@ -9,4 +9,11 @@
 
 .menu-text {
     color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.menu-text:hover {
+  color: #f00;
+  text-decoration: none;
 }
