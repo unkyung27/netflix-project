@@ -25,3 +25,42 @@
 .banner-text-area > *{
     z-index: 2;
 }
+
+/* 반응형 스타일 */
+/* 태블릿 크기 (예: 768px 이하) */
+@media (max-width: 768px) {
+    .banner {
+        height: 40vh; /* 높이 줄임 */
+        background-position: center; /* 배경 이미지 중앙 정렬 */
+    }
+
+    .banner:before {
+        height: 40vh; /* 배너 높이에 맞게 조정 */
+    }
+
+    .banner-text-area {
+        width: 50%; /* 텍스트 영역 너비 증가 */
+        padding: 1.5rem; /* 패딩 줄임 */
+    }
+}
+
+/* 모바일 크기 (예: 576px 이하) */
+@media (max-width: 576px) {
+    .banner {
+        height: 30vh; /* 모바일에서 배너 높이 감소 */
+        background-position: center; /* 배경 이미지 중앙 정렬 */
+    }
+
+    .banner:before {
+        height: 30vh; /* 배너 높이에 맞게 조정 */
+    }
+
+    .banner-text-area {
+        width: 80%; /* 텍스트 영역 너비 크게 증가 */
+        padding: 1rem; /* 패딩 더 줄임 */
+    }
+
+    .banner-text-area > * {
+        font-size: 0.9rem; /* 텍스트 크기 감소 */
+    }
+}
