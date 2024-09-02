@@ -12,9 +12,10 @@
     background: rgba(43, 41, 41, 0.9);
     opacity: 0;
     transition: all 1s;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     overflow-wrap: break-word;
+    padding: 20px;
 }
 
 .overlay:hover{
@@ -24,4 +25,8 @@
 .movie-card:hover{
     transform: scale(1.2) translateZ(20px);
     z-index: 2;
+}
+
+.movie-title{
+    transform: skewX(-15deg)
 }
