@@ -1,31 +1,22 @@
 import React from 'react';
 import { Badge } from 'react-bootstrap';
 import './MovieCard.style.css';
-
-const genres = {
-    28: "Action",
-    12: "Adventure",
-    16: "Animation",
-    35: "Comedy",
-    80: "Crime",
-    99: "Documentary",
-    18: "Drama",
-    10751: "Family",
-    14: "Fantasy",
-    36: "History",
-    27: "Horror",
-    10402: "Music",
-    9648: "Mystery",
-    10749: "Romance",
-    878: "Science Fiction",
-    10770: "TV Movie",
-    53: "Thriller",
-    10752: "War",
-    37: "Western"
-};
+import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
 
 const MovieCard = ({movie}) => {
-    console.log("movie", movie);
+    const {data:genreData} = useMovieGenreQuery();
+    // console.log("genreData", genreData);
+    // console.log("movie", movie);
+
+    const showGenre=(genreIdList)=>{
+        if(!genreData) return []
+
+        const genreNameList = genreIdList.map((id)=>{
+            const genreObj = genreData.find((genre)=>genre.id === id)
+            return genreObj.name;
+        })
+        return genreNameList
+    }
   return (
     <div 
     style={{
@@ -37,8 +28,8 @@ const MovieCard = ({movie}) => {
     >
         <div className='overlay'>
             <h1 className='movie-title'>{movie.title}</h1>
-            {movie.genre_ids.map((id)=>(
-            <Badge bg="primary" key={id}>{genres[id]}</Badge>
+            {showGenre(movie.genre_ids).map((genre, id)=>(
+            <Badge bg="primary" key={id}>{genre}</Badge>
             ))}
             <div>
                 <div>{movie.vote_average.toFixed(1)}</div>
