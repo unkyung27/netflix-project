@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './AppLayout.style.css';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link, NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
 
 const AppLayout = () => {
+  const [keyword, setKeyword] = useState('');
+  const navigate = useNavigate();
+
+  const searchByKeyword=(event)=>{
+    event.preventDefault();
+    //1. url 변경
+    navigate(`/movies?q=${keyword}`);
+    setKeyword('');
+  }
   const BASE_PATH = process.env.REACT_APP_BASE_PATH || '/';
   return (
     <div className="app-container">
@@ -38,12 +47,14 @@ const AppLayout = () => {
             <NavLink to="/" className="menu-text">HOME</NavLink>
             <NavLink to="/movies" className="menu-text">MOVIES</NavLink>
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" onSubmit={searchByKeyword}>
             <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={keyword}
+              onChange={(event)=>setKeyword(event.target.value)}
             />
             <Button variant="outline-danger">Search</Button>
           </Form>
