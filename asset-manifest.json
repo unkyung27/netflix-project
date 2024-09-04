@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/netflix-project/static/css/main.c3768e47.css",
-    "main.js": "/netflix-project/static/js/main.db814754.js",
+    "main.css": "/netflix-project/static/css/main.d805f3e7.css",
+    "main.js": "/netflix-project/static/js/main.1e04356f.js",
     "static/js/453.eddb8b7a.chunk.js": "/netflix-project/static/js/453.eddb8b7a.chunk.js",
     "static/media/revicons.eot": "/netflix-project/static/media/revicons.a77de540a38981833f9e.eot",
     "static/media/revicons.ttf": "/netflix-project/static/media/revicons.57fd05d4ae650374c8de.ttf",
     "static/media/revicons.woff": "/netflix-project/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/netflix-project/index.html",
-    "main.c3768e47.css.map": "/netflix-project/static/css/main.c3768e47.css.map",
-    "main.db814754.js.map": "/netflix-project/static/js/main.db814754.js.map",
+    "main.d805f3e7.css.map": "/netflix-project/static/css/main.d805f3e7.css.map",
+    "main.1e04356f.js.map": "/netflix-project/static/js/main.1e04356f.js.map",
     "453.eddb8b7a.chunk.js.map": "/netflix-project/static/js/453.eddb8b7a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3768e47.css",
-    "static/js/main.db814754.js"
+    "static/css/main.d805f3e7.css",
+    "static/js/main.1e04356f.js"
   ]
 }
