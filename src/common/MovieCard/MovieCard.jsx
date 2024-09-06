@@ -2,6 +2,7 @@ import React from 'react';
 import { Badge } from 'react-bootstrap';
 import './MovieCard.style.css';
 import { useMovieGenreQuery } from '../../hooks/useMovieGenre';
+import { useNavigate } from 'react-router-dom';
 
 const MovieCard = ({movie}) => {
     const {data:genreData} = useMovieGenreQuery();
@@ -17,6 +18,12 @@ const MovieCard = ({movie}) => {
         })
         return genreNameList
     }
+
+    const navigate = useNavigate();
+
+    const detailMovieInfo = () => {
+        navigate(`/movies/${movie.id}`);
+    };
   return (
     <div 
     style={{
@@ -26,7 +33,7 @@ const MovieCard = ({movie}) => {
     }}
     className='movie-card'
     >
-        <div className='overlay'>
+        <div className='overlay' onClick={detailMovieInfo} style={{ cursor: 'pointer' }}>
             <h1 className='movie-title'>{movie.title}</h1>
             {showGenre(movie.genre_ids).map((genre, id)=>(
             <Badge bg="primary" key={id}>{genre}</Badge>
